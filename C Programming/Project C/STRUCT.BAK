@@ -1,0 +1,21 @@
+#include<stdio.h>
+#define g gotoxy
+#define p printf
+#define s scanf
+
+struct phonebook
+{
+	char namep[20];
+	long int tel;
+	char address[20];
+}
+
+void main ()
+{
+
+	clrscr();
+	phonebook x;
+	p("Enter name: ");
+	s("%s",&x.name);
+	p("Enter
+}

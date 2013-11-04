@@ -1,0 +1,58 @@
+#include<stdio.h>
+#define g gotoxy
+#define p printf
+#define s scanf
+
+int num1,num2,sum,diff,prod,quo;
+char sign;
+
+void main ()
+{ /* begin of main */
+  clrscr();
+  g(3,3);
+  p("Enter 1st Number: "); s("%i", &num1);
+
+  g(3,4);
+  p("Enter 2nd Number: "); s("%i", &num2);
+
+  g(3,6);
+  p("Choose operation[+,-,*,/]: "); s("%s", &sign);
+
+  if (sign=='+')
+  {
+  g(3,10);
+  sum= num1+num2;
+  p("The sum is: %i ",sum);
+  }
+  else if (sign=='-')
+  {
+  g(3,12);
+  diff=num1-num2;
+  p("the diff is: %i",diff);
+  }
+  else if (sign=='*')
+  {
+  g(3,14);
+  prod=num1*num2;
+  p("The product is: %i",prod);
+  }
+  else if (sign=='/')
+  {
+   if (num2==0) /* num=0 */
+   {
+    g(3,8);
+    p("Division by zero error:  Undefined");
+   }
+
+   else
+
+   {
+
+   quo=num1/num2;
+    g(3,16);
+    p("The Quotient is %i", quo);
+
+   }
+  }
+  getch();
+} /* end of main */

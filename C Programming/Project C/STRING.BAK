@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <string.h>
+#include <ctype.h>
+#include <io.h>
+#define g gotoxy
+#define s scanf
+#define p printf
+puck();
+FILE *joey; /*pointer declaration*/
+char name1[20],name2[20],filescan[20];
+main()
+{
+clrscr();
+joey=fopen("sample.txt","a+"); /*opens or create a textfile*/
+
+p("Enter name: ");
+s("%s",name1);
+p("Enter name: ");
+s("%s",name2);
+
+if (!strcmp(name1,name2))    /*compares the 2 string values*/
+{
+p("equal");
+}
+fprintf(joey,"%s \t%s\n",name1,name2);   /* writes the value of string into file*/
+fscanf(joey,"%s %s",&name1,&name2); /* get the values of string from file */
+p("%s \t %s",name1,name2);
+fclose(joey); /*closes the file */
+getch();
+}
+
